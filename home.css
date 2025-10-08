@@ -1,0 +1,106 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004182;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+}
+
+.navdiv img {
+    margin-right: 10px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.page {
+    list-style: none;
+    display: flex;
+    margin-left: 30px;
+}
+
+.page li {
+    margin-right: 20px;
+}
+
+.page li a {
+    color: white;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #007bb5;
+    padding: 8px 16px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #005f83;
+}
+
+/* Container */
+.container {
+    padding: 20px;
+}
+
+/* Sections */
+.item {
+    margin-bottom: 30px;
+}
+
+.item h1, .item h2 {
+    color: #333;
+}
+
+.item p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .page {
+        flex-direction: column;
+    }
+
+    .page li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

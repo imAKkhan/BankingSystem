@@ -1,0 +1,72 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #004a99;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #003366;
+}
+
+nav .logout {
+    background-color: #e60000;
+    border-radius: 5px;
+}
+
+nav .logout:hover {
+    background-color: #b30000;
+}
+
+/* Content Section Styles */
+.content {
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#home {
+    font-size: 24px;
+    font-weight: bold;
+    color: #004a99;
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        padding: 12px;
+        width: 100%;
+    }
+}

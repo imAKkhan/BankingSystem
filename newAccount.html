@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="newAccount.css">
+</head>
+<body>
+    <div class="navigation">
+        <a href="userhome.html">Home</a> |
+        <a href="newAccount.html">Create Account</a> |
+        <a href="transfer.html">Transfer Money</a> |
+        <a href="debit.html">Debit</a> |
+        <a href="credit.html">Credit</a> |
+        <a href="balance.html">Check Balance</a> |
+        <a href="changePassword.html">Change Password</a> |
+        <a href="transactionHistory.html">Transaction History</a> |
+        <a href="logout.html">Logout</a>
+    </div>
+
+    <div class="container">
+        <h2>Create New Account</h2>
+        <form id="createAccountForm" action="NewAccount" method="post" novalidate>
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Username" required aria-label="Username">
+            </div> <!-- Added missing closing div -->
+
+            <div class="input-box">
+                <input type="number" name="aadharno" placeholder="Aadhar No" required aria-label="Aadhar No">
+            </div>
+
+            <div class="input-box">
+                <input type="email" name="emailname" placeholder="Email ID" required aria-label="Email ID">
+            </div>
+
+            <div class="input-box">
+                <input type="tel" name="mobileno" placeholder="Phone Number"  required aria-label="Phone Number">
+            </div>
+
+            <div class="input-box">
+                <input type="text" name="fathername" placeholder="Father Name" required aria-label="Father Name">
+            </div>
+
+            <div class="input-box">
+                <input type="number" name="balanceno" placeholder="Submit Balance" required aria-label="Submit Balance">,
+            </div>
+
+            <div class="input-box">
+                <select name="accounttype" required aria-label="Account Type">
+                    <option value="" disabled selected>Select Account Type</option>
+                    <option value="Savings">Savings Account</option>
+                    <option value="Current">Current Account</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <select name="gendername" required aria-label="Gender">
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Create Account</button>
+        </form>
+    </div>
+
+    <script src="newAccount.js"></script>
+</body>
+</html>

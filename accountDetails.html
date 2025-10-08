@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details - SBI Account Dashboard</title>
+    <link rel="stylesheet" href="accountdetails.css">
+</head>
+<body>
+    <nav>
+        <a href="adminhome.html">Home</a>
+        <a href="accountDetails.html">Account Details</a>
+        <a href="transaction.html">Transaction History</a>
+        <a href="debitHistory.html">Debit History</a>
+        <a href="creditHistory.html">Credit History</a>
+        <a href="login.html" class="logout">Logout</a>
+    </nav>
+
+    <div class="content">
+        <h1>Account Details</h1>
+        <table class="list" id="accountDetailsTable">
+            <thead>
+                <tr>
+                    <th>Ser No.</th>
+                    <th>Name</th>
+                    <th>Account No.</th>
+                    <th>Aadhar No.</th>
+                    <th>Mobile No.</th>
+                    <th>Email-ID</th>
+                    <th>Father Name</th>
+                    <th>Account Type</th>
+                    <th>Balance</th>
+                    <th>Gender</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="accountDetailsBody">
+                <!-- Account details will be loaded here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Fetch data from the servlet and display it in the table
+        fetch('AccountDetails')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("accountDetailsBody").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading account details:", error));
+    </script>
+
+</body>
+</html>

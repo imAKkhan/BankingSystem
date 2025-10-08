@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Account Details</title>
+    <style>
+        body {
+            background-color: #b3d9ff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var fieldname = document.getElementById("fieldname").value;
+            var newvalue = document.getElementById("newvalue").value;
+            
+            if (username == "" || fieldname == "" || newvalue == "") {
+                alert("All fields are required!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Update Account Details</h2>
+        <form action="updateServlet" method="post" onsubmit="return validateForm()">
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="fieldname">Field Name:</label>
+            <input type="text" id="fieldname" name="fieldname" required>
+            
+            <label for="newvalue">New Value:</label>
+            <input type="text" id="newvalue" name="newvalue" required>
+            
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>

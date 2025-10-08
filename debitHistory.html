@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debit History - SBI Account Dashboard</title>
+    <link rel="stylesheet" href="debitHistory.css">
+</head>
+<body>
+    <nav>
+        <a href="adminhome.html">Home</a>
+        <a href="accountDetails.html">Account Details</a>
+        <a href="transaction.html">Transaction History</a>
+        <a href="debitHistory.html">Debit History</a>
+        <a href="creditHistory.html">Credit History</a>
+        <a href="login.html" class="logout">Logout</a>
+    </nav>
+
+    <div class="content">
+        <h1>Debit History</h1>
+
+        <!-- Form to enter account number -->
+        <form action="DebitHistoryServlet" method="GET" class="form-container">
+            <label for="accountno">Enter Account Number:</label>
+            <input type="text" id="accountno" name="accountno" required>
+            <input type="submit" value="Get Debit History">
+        </form>
+
+        <!-- Debit History Table -->
+        <table class="list" id="debitList">
+            <thead>
+                <tr>
+                    <th>Ser No</th>
+                    
+                    <th>Username</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- The rows will be populated dynamically by the Java Servlet -->
+                <tr><td colspan="5">Please enter an account number to fetch the debit history.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // You can include any JavaScript here if needed to handle data dynamically
+    </script>
+</body>
+</html>

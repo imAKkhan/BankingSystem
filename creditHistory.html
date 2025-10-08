@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit History - SBI Account Dashboard</title>
+    <link rel="stylesheet" href="creditHistory.css">
+</head>
+<body>
+    <nav>
+        <a href="adminhome.html">Home</a>
+        <a href="accountDetails.html">Account Details</a>
+        <a href="transaction.html">Transaction History</a>
+        <a href="debitHistory.html">Debit History</a>
+        <a href="creditHistory.html">Credit History</a>
+        <a href="login.html" class="logout">Logout</a>
+    </nav>
+
+    <div class="content">
+        <h1>Credit History</h1>
+        
+        <!-- Input for account number -->
+        <label for="accountNo">Enter Account Number:</label>
+        <input type="text" id="accountNo" placeholder="Enter 11-digit Account Number">
+        <button onclick="fetchCreditHistory()">Load Credit History</button>
+
+        <table class="list" id="creditList">
+            <thead>
+                <tr>
+                    <th>Ser No</th>
+                    <th>Username</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="4">Enter account number and click "Load Credit History"</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function fetchCreditHistory() {
+            let accountNo = document.getElementById("accountNo").value;
+            
+            if (!accountNo.match(/^\d{11}$/)) {
+                alert("Please enter a valid 11-digit account number.");
+                return;
+            }
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "CreditHistoryServlet?accountno=" + accountNo, true);
+            xhr.setRequestHeader("Content-Type", "application/xml");
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    let xmlData = xhr.responseXML;
+                    let tableBody = document.querySelector("#creditList tbody");
+                    tableBody.innerHTML = ""; // Clear previous data
+
+                    let transactions = xmlData.getElementsByTagName("transaction");
+
+                    if (transactions.length === 0) {
+                        tableBody.innerHTML = "<tr><td colspan='4'>No credit history found.</td></tr>";
+                        return;
+                    }
+
+                    for (let i = 0; i < transactions.length; i++) {
+                        let id = transactions[i].getElementsByTagName("id")[0].textContent;
+                        let username = transactions[i].getElementsByTagName("username")[0].textContent;
+                        let amount = transactions[i].getElementsByTagName("amount")[0].textContent;
+                        let date = transactions[i].getElementsByTagName("date")[0].textContent;
+
+                        let row = `<tr>
+                                    <td>${id}</td>
+                                    <td>${username}</td>
+                                    <td>${amount}</td>
+                                    <td>${date}</td>
+                                   </tr>`;
+                        tableBody.innerHTML += row;
+                    }
+                } else {
+                    alert("Failed to fetch credit history.");
+                }
+            };
+
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

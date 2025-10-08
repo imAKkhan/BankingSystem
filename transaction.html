@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <link rel="stylesheet" href="transactionhistory.css">
+</head>
+<body>
+    <nav>
+        <a href="adminhome.html">Home</a>
+        <a href="accountDetails.html">Account Details</a>
+        <a href="transaction.html">Transaction History</a>
+        <a href="debitHistory.html">Debit History</a>
+        <a href="creditHistory.html">Credit History</a>
+        <a href="login.html" class="logout">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h2>Transaction History</h2>
+        
+        <!-- Form to enter account number -->
+        <form id="accountForm" method="GET">
+            <label for="accountno">Enter Account Number:</label>
+            <input type="text" id="accountno" name="accountno" required>
+            <input type="submit" value="Get Transaction History">
+        </form>
+
+        <!-- Transaction History Table -->
+        <table id="transactionTable" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Ser No</th>
+                    <th>Username</th>
+                    <th>Sender</th>
+                    <th>Receiver</th>
+                    <th>Amount</th>
+                    <th>Transaction Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted dynamically by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById("accountForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            var accountNo = document.getElementById("accountno").value;
+            if (accountNo.trim() === "") {
+                alert("Please enter a valid account number.");
+                return;
+            }
+
+            // Fetch transaction data from the server based on the entered account number
+            fetch(`TransactionHistoryServlet?accountno=${accountNo}`)
+                .then(response => response.text()) // Get the response as HTML text
+                .then(data => {
+                    let tbody = document.querySelector("#transactionTable tbody");
+                    tbody.innerHTML = data; // Insert data dynamically into the table body
+                    
+                    // Display the table if data is returned
+                    if (data.trim() !== "") {
+                        document.getElementById("transactionTable").style.display = "table";
+                    } else {
+                        document.getElementById("transactionTable").style.display = "none";
+                        alert("No transactions found for this account.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching transaction data:', error);
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004182;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+}
+
+.navdiv img {
+    margin-right: 10px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.page {
+    list-style: none;
+    display: flex;
+    margin-left: 30px;
+}
+
+.page li {
+    margin-right: 20px;
+}
+
+.page li a {
+    color: white;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #007bb5;
+    padding: 8px 16px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #005f83;
+}
+
+/* Login Form */
+form {
+    background-color: white;
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-size: 16px;
+    color: #333;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #004182;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #003060;
+}
+
+/* Link to Sign Up */
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+p a {
+    color: #004182;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .page {
+        flex-direction: column;
+    }
+
+    .page li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    form {
+        width: 90%;
+        margin: 20px auto;
+    }
+}

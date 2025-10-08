@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Balance</title>
+    <link rel="stylesheet" href="balance.css">
+</head>
+<body>
+    <div class="navigation">
+        <a href="userhome.html">Home</a> |
+        <a href="newAccount.html">Create Account</a> |
+        <a href="transfer.html">Transfer Money</a> |
+        <a href="debit.html">Debit</a> |
+        <a href="credit.html">Credit</a> |
+        <a href="balance.html">Check Balance</a> |
+        <a href="changePassword.html">Change Password</a> |
+        <a href="transactionHistory.html">Transaction History</a> |
+        <a href="logout.html">Logout</a>
+    </div>
+
+    <div class="container">
+        <h2>Check Account Balance</h2>
+        <form action="checkbalance" method="POST">
+            <div class="input-box">
+                <input type="number" name="accountno" placeholder="Enter Account Number" required 
+                       minlength="11" maxlength="11" pattern="\d{11}"
+                       title="Account number must be 11 digits">
+            </div>
+            <button type="submit" class="btn">Check Balance</button>
+        </form>
+    </div>
+
+</body>
+</html>

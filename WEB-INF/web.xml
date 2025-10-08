@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+<servlet>
+        <servlet-name>CreditHistoryServlet</servlet-name>
+        <servlet-class>CreditHistoryServlet</servlet-class>
+    </servlet>
+
+    <!-- Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>CreditHistoryServlet</servlet-name>
+        <url-pattern>/CreditHistoryServlet</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>TransactionHistoryServlet</servlet-name>
+        <servlet-class>TransactionHistoryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TransactionHistoryServlet</servlet-name>
+        <url-pattern>/TransactionHistoryServlet</url-pattern>
+    </servlet-mapping>
+<servlet>
+    <servlet-name>UpdateAccountServlet</servlet-name>
+    <servlet-class>UpdateAccountServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>UpdateAccountServlet</servlet-name>
+    <url-pattern>/updateServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>AccountDetails</servlet-name>
+    <servlet-class>AccountDetails</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>AccountDetails</servlet-name>
+    <url-pattern>/AccountDetails</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>LogoutServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+ 
+<servlet>
+        <servlet-name>TransactionHistory</servlet-name>
+        <servlet-class>TransactionHistory</servlet-class>
+    </servlet>
+
+    <!-- Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>TransactionHistory</servlet-name>
+        <url-pattern>/TransactionHistory</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>ChangePassword</servlet-name>
+        <servlet-class>ChangePassword</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ChangePassword</servlet-name>
+        <url-pattern>/changepass</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>CheckBalanceServlet</servlet-name>
+        <servlet-class>CheckBalanceServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CheckBalanceServlet</servlet-name>
+        <url-pattern>/checkbalance</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>TransferServlet</servlet-name>
+        <servlet-class>TransferServlet</servlet-class>
+    </servlet>
+
+    <!-- Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>TransferServlet</servlet-name>
+        <url-pattern>/transfer</url-pattern>
+    </servlet-mapping>
+<servlet>
+    <servlet-name>debitbalance</servlet-name>
+    <servlet-class>debitbalance</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>debitbalance</servlet-name>
+    <url-pattern>/debitbalance</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>DebitHistoryServlet</servlet-name>
+    <servlet-class>DebitHistoryServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>DebitHistoryServlet</servlet-name>
+    <url-pattern>/DebitHistoryServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>CreditBalanceServlet</servlet-name>
+    <servlet-class>creditbalance</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>CreditBalanceServlet</servlet-name>
+    <url-pattern>/creditbalance</url-pattern>
+</servlet-mapping>
+ <servlet>
+    <servlet-name>NewAccount</servlet-name>
+    <servlet-class>NewAccount</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>NewAccount</servlet-name>
+    <url-pattern>/NewAccount</url-pattern>
+</servlet-mapping>
+    <servlet>
+        <servlet-name>servlet</servlet-name>
+        <servlet-class>servlet</servlet-class>
+    </servlet>
+
+    <!-- Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>servlet</servlet-name>
+        <url-pattern>/signup</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+
+
+
+    <!-- Welcome Page -->
+    <welcome-file-list>
+        <welcome-file>home.html</welcome-file>
+    </welcome-file-list>
+
+</web-app>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Money</title>
+    <link rel="stylesheet" href="transfer.css">
+</head>
+<body>
+    <div class="navigation">
+        <a href="userhome.html">Home</a> |
+        <a href="newAccount.html">Create Account</a> |
+        <a href="transfer.html">Transfer Money</a> |
+        <a href="debit.html">Debit</a> |
+        <a href="credit.html">Credit</a> |
+        <a href="balance.html">Check Balance</a> |
+        <a href="changePassword.html">Change Password</a> |
+        <a href="transactionHistory.html">Transaction History</a> |
+        <a href="logout.html">Logout</a>
+    </div>
+
+    <div class="container">
+        <h2>Transfer Money</h2>
+        <form action="transfer" method="POST" onsubmit="return validateForm()">
+            <div class="input-box">
+                <input type="number" name="fromAccount" placeholder="From Account" required 
+                       minlength="11" maxlength="11" pattern="\d{11}" 
+                       title="Account number must be 11 digits">
+            </div>
+            <div class="input-box">
+                <input type="number" name="toAccount" placeholder="To Account" required 
+                       minlength="11" maxlength="11" pattern="\d{11}" 
+                       title="Account number must be 11 digits">
+            </div>
+            <div class="input-box">
+                <input type="number" name="amount" placeholder="Amount" required min="1" 
+                       title="Amount must be a positive number">
+            </div>
+            <button type="submit" class="btn">Transfer</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>

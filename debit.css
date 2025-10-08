@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.navigation {
+    background-color: #004d99;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 12px;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.navigation a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+/* Logout Link */
+.navigation a[href="logout.html"] {
+    color: red;
+    font-weight: bold;
+}
+
+.navigation a[href="logout.html"]:hover {
+    color: darkred;
+}
+
+/* Container */
+.container {
+    background: white;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    text-align: left;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading */
+.container h2 {
+    text-align: center;
+    color: #004d99;
+    margin-bottom: 20px;
+}
+
+/* Input Box */
+.input-box {
+    margin-bottom: 15px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    transition: 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #004d99;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 77, 153, 0.3);
+}
+
+/* Submit Button */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #004d99;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #003366;
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+        margin: 0 8px;
+    }
+}
